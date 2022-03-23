@@ -1,4 +1,13 @@
 import numpy as np
 import pandas as pd
 import seaborn as sns
-
+df=pd.read_csv("/content/Placement_Dataset.csv")//read the csv file
+print(df['salary'])
+df.head()
+df.tail()
+df.info()//features of our dataset
+df['salary'].isnull().sum()//checks whether theres is a null values sum in salary column
+df.isnull() //check how many null values are there
+sns.distplot([df.salary])
+df['salary'].fillna(df['salary'].median) //takes the ,median values
+df['salary'].fillna(df['salary'].median,inplace=True)//filled the values in the place of where data is not present
